@@ -1,0 +1,13 @@
+/*--------------------------Navbar-------------------------*/
+
+.navbar-logo{
+    height:50px;
+    width:193px;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+
+.nav-item{
+    padding: 0px 10px;
+}

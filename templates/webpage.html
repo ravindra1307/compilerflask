@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/main.css">
+    <title>Css Template</title>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+      <a class="navbar-brand" href="#">
+        <img src="static/logo.gif" class="navbar-logo">
+      </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+   <span class="spacer"></span>
+    <ul class="navbar-nav mr-lg-0">
+ 
+      <li class="nav-item">
+          <button class="btn btn-success" type="button" onclick="loadDoc()">Submit</button>
+      </li>
+    </ul>
+        
+  </div>
+</nav>
+    <br>
+    <div class="container-fluid"> 
+        <div class="row">
+            <div class="col-12 col-md-6" id='colleft'>
+
+               <div class="custom-box">
+                   <h5>Code</h5>
+               </div>
+                
+              <form method="post"  id="input" class="input" >
+
+                <div class="prog-lang">
+                  Programming language: 
+                 <select class='form-control'  id="dropdown" name='language' value="{{request.form.language}}">
+                   <option value="c">C</option>
+                   <option value="cs">C#</option>
+                   <option value="cpp">CPP</option>
+                   <option value="go">Go</option>
+                   <option value="java">Java</option>
+                   <option value="js">Javascript</option>
+                   <option value="kt">Kotlin</option>
+                   <option value="lua">Lua</option>
+                   <option value="m">Objective C</option>
+                   <option value="pl">Pearl</option>
+                   <option value="php">PHP</option>
+                   <option value="py">Python</option>
+                   <option value="R">R</option>
+                   <option value="rb">Ruby</option>
+                   <option value="txt">SQL</option>
+                   <option value="swift">Swift</option>
+                   <option value="ts">Typescript</option>
+                 </select>
+               </div>
+
+              
+
+                {% if code %}
+
+                <textarea name='code' value="{{request.form.code}}" id="code" class="custom-textarea" rows="15">
+                  {{code}}
+                </textarea>
+
+                {% else %}
+                <textarea class="custom-textarea" name='code' value="{{request.form.code}}" id="code" rows="10">
+                  Code Goes Here
+                </textarea>
+
+                {% endif %}
+
+               
+
+              </form>
+
+            </div>
+
+
+             <div class="col-12 col-md-6">
+                <div class="custom-box">
+                   <h5>Output</h5>
+              </div>
+
+
+              <div class="output">
+
+                {% if output %}
+                  
+                    {{output}}
+                  
+                              
+                {% else %}
+                  
+                    Here's the output
+                
+
+                {% endif %}
+              </div>
+                 
+            </div>
+        </div>
+    </div>
+    <script>
+function loadDoc() {
+  document.getElementById("input").submit();
+}
+
+
+</script>
+</body>
+
+</html>

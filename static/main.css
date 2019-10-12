@@ -1,0 +1,65 @@
+  body,
+  html {
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100%;
+      background-color: #3C404D;
+  }
+
+.custom-textarea{
+    background-color: #1D1E22;
+    border: 2px #1D1E22 solid;
+    box-shadow: 2px 2px black;
+    color: white;
+    width:100%;
+    height: 100%;
+    resize: none;
+}
+
+
+.custom-box{
+    background-color: #1D1E22;
+    border: 1px #1D1E22 solid;
+    box-shadow: 2px 2px black;
+    height: 50px;
+    color: white;  
+    border-bottom-color: gray;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+.output{
+    height: 89%;
+    background-color: #1D1E22;
+    border: 2px #1D1E22 solid;
+    box-shadow: 2px 2px black;
+    color: white;
+    width:100%;
+}
+
+/*.input{
+    height: 100%;
+    background-color: #1D1E22;
+    border: 2px #1D1E22 solid;
+    box-shadow: 2px 2px black;
+    color: white;
+    width:100%;
+}*/
+
+
+#dropdown{
+  width: 27%;
+}
+
+#code{
+    height:400px;
+}
+
+.prog-lang{
+  color: white;
+  background-color: #1D1E22;
+  padding: 10px;
+  border: 2px #1D1E22 solid;
+  box-shadow: 2px 2px black;
+}
+
+

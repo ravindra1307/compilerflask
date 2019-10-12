@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 93%;
+}
+
+/* Style the header */
+header {
+  height: 7%;
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+#output {
+  float: right;
+  width: 50%;
+  height: 100%; 
+  background: #696f6f;
+  padding: 20px;
+}
+
+
+
+#input {
+  float: left;
+  
+  width: 50%;
+  background-color: #f1f1f1;
+  height: 100%; /* only for demonstration, should be removed */
+}
+
+#code{
+
+  width:100%;
+  height:90%;
+}
+
+#language{
+  width: 100%;
+  height: 10%;
+}
+
+section{
+
+  width: 100%;
+  height: 100%;
+
+}
+
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+
+textarea {
+
+    width: 100%;
+    height: 100%; 
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  #ouput, #input {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <button type="button" onclick="loadDoc()">Request data</button>
+  </header>
+
+  <form class='form-inline'  id="input" method="POST">
+
+      {% if code %}
+
+      <textarea name='code' value="{{request.form.code}}" id="code">
+          {{code}}
+        </textarea>
+
+      {% else %}
+        <textarea name='code' value="{{request.form.code}}" id="code">
+          Code Goes Here
+        </textarea>
+
+      {% endif %}
+  
+
+      Programming language: 
+      <select class="dropdown" name='language' value="{{request.form.language}}">
+        <option value="c">C</option>
+        <option value="cpp">CPP</option>
+        <option value="py">Python</option>
+        <option value="java">Java</option>
+      </select>
+
+  </form>
+
+
+  <div id="output">
+
+    {% if output %}
+    <p>
+      {{output}}
+    </p>
+                    
+    {% else %}
+    <p>
+      Here's the output
+    </p>
+
+    {% endif %}
+ </div>
+
+
+ <script>
+function loadDoc() {
+  document.getElementById("input").submit();
+}
+</script>
+
+</body>
+</html>
